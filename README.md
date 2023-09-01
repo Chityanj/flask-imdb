@@ -16,7 +16,8 @@ Movies
  curl -X POST -H "Content-Type: application/json" -d '{
   "email": "user@example.com",
   "password": "password"
-}' http://localhost:5000/auth```
+}' http://localhost:5000/auth
+```
 
 - Retrieve a list of movies. You can use query parameters to filter and search for movies by name, director, genre, IMDb rating, and popularity.
 ```bash
