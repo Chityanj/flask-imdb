@@ -5,6 +5,7 @@ Before running this API, ensure you have the following software installed:
 - SQLite (for the database)
 
 ### Installation
+- Clone this and move to the folder where you have cloned it
 ```pip install -r requirements.txt ```
 
 ### Curls
