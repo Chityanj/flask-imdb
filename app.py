@@ -97,10 +97,21 @@ def add_movie():
     user_email = get_jwt_identity()
     if user_email:
         data = request.get_json()
-        db_cursor.execute("INSERT INTO movies (popularity, director, genre, imdb_score, name) VALUES (?, ?, ?, ?, ?)",
-                          (data['99popularity'], data['director'], ','.join(data['genre']), data['imdb_score'], data['name']))
-        db_connection.commit()
-        return jsonify(message="Movie added successfully"), 201
+        
+        # Check for required fields
+        required_fields = ['99popularity', 'director', 'genre', 'imdb_score', 'name']
+        if not all(field in data for field in required_fields):
+            return jsonify(error="Missing required fields"), 400
+
+        try:
+            # Attempt to insert the movie data into the database
+            db_cursor.execute("INSERT INTO movies (popularity, director, genre, imdb_score, name) VALUES (?, ?, ?, ?, ?)",
+                              (data['99popularity'], data['director'], ','.join(data['genre']), data['imdb_score'], data['name']))
+            db_connection.commit()
+            return jsonify(message="Movie added successfully"), 201
+        except Exception as e:
+            # Handle database insertion errors
+            return jsonify(error="Failed to add the movie. Please check your data."), 500
     return jsonify(message="Unauthorized"), 401
 
 # Edit endpoint
