@@ -7,7 +7,8 @@ Before running this API, ensure you have the following software installed:
 ### Installation
 - Clone this and move to the folder where you have cloned it.
   
-```pip install -r requirements.txt ```
+- ```pip install -r requirements.txt ```
+- ```python3 app.py```
 
 ### Curls
 - Register or log in a user by providing an email and password. The endpoint returns a JWT token for accessing protected endpoints.
