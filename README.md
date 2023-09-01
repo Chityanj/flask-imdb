@@ -60,22 +60,22 @@ Search for movies based on various criteria, including name, director, genre, IM
 
 - Search Movies by Name
 ```bash 
-curl "http://localhost:5000/movies?name=Star%20Wars"
+curl "http://localhost:5000/search?name=Star%20Wars"
 ```
 
 - Search movies by director:
 ```bash
-curl "http://localhost:5000/movies?director=George%20Lucas"
+curl "http://localhost:5000/search?director=George%20Lucas"
 ```
 
 - Search movies by multiple genres or a genre:
 ```bash
-curl "http://localhost:5000/movies?genre=Adventure&genre=Fantasy"
+curl "http://localhost:5000/search?genre=Adventure&genre=Fantasy"
 ```
 
 Search movies by IMDb rating range or wih just maximum and minimum:
 ```bash
-curl "http://localhost:5000/movies?min_rating=8.0&max_rating=9.0"
+curl "http://localhost:5000/search?min_rating=8.0&max_rating=9.0"
 ```
 ```bash
 curl http://localhost:5000/search?max_rating=9.0
@@ -86,11 +86,11 @@ curl http://localhost:5000/search?min_rating=8.0
 Search movies by popularity range or wih just maximum and minimum:
 
 ```bash
-curl "http://localhost:5000/movies?min_popularity=80.0&max_popularity=90.0"
+curl "http://localhost:5000/search?min_popularity=80.0&max_popularity=90.0"
 ```
 ```bash
-curl "http://localhost:5000/movies?min_popularity=80.0
+curl "http://localhost:5000/search?min_popularity=80.0
 ```
 ```bash
-curl "http://localhost:5000/movies?max_popularity=80.0
+curl "http://localhost:5000/search?max_popularity=80.0
 ```
